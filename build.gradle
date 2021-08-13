@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.testng:testng:7.4.0'//pishem test тестовый раннинг
+    implementation 'org.seleniumhq.selenium:selenium-server:4.0.0-alpha-2'//web driver
+    implementation 'io.github.bonigarcia:webdrivermanager:4.4.3'//web driver автоматически скачивает драйвера
+
+}
+
+test {
+    useTestNG {// pereopredelili tasku
+        suites "src\\test\\resources\\myTest.xml"
+    }
+}
+allure {//dlyz sozdaniya reportd
+    autoconfigure=true
+    version='2.13.2'
+    useTestNG{
+        version='2.13.2'
+    }
+
+
+}
