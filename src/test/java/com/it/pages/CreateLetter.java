@@ -40,10 +40,10 @@ public class CreateLetter extends BasePage{
         inputMessage.sendKeys(message);
         driver.switchTo().defaultContent();
         btnSend.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         btnSettings.click();
         btnLogout.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
     }
 
