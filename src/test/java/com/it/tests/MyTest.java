@@ -37,14 +37,19 @@ public class MyTest extends BaseTest{
     @Test
 
     public void myTest() throws InterruptedException {
-//        List<Users> randomUsers = UserFactory.getRandomUsers(200);
-//        randomUsers.forEach(System.out::println);
+        List<Users> randomUsers = UserFactory.getRandomUsers(0);
+        randomUsers.forEach(System.out::println);
         app.login.login(validUser);
         Assert.assertEquals(app.board.getLbUserEmail(),"ittest2@i.ua");
-        app.newLetterHelper.createNewLetter("ambartsumian.l@i.ua", "11111", "222222");
-        app.login.logout();
-        app.login.login(receiverUser);
-        Assert.assertEquals(app.board.gettopicText(),"11111");
+       Thread.sleep(3000);
+      app.newLetterHelper.createNewLetter("ambartsumian.l@i.ua", "11111", "222222");
+      // app.login.logout();
+       app.login.login(receiverUser);
+       Assert.assertEquals(app.board.gettopicText(),"11111");
+       Assert.assertEquals(app.board.getlinkEmail(),"test");
+
+
+
 
     }
 

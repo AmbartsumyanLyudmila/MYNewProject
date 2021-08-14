@@ -12,6 +12,10 @@ public class DashboardPage extends BasePage {
 	@FindBy(xpath = "//form/div[1]/a/span[3]/span")
 	private WebElement topicText;
 
+	@FindBy(xpath = "//form/div[1]/a/span[2]")
+	private WebElement linkEmail;
+
+
 
 	public String getLbUserEmail() {
 		return lbWSUserEmail.getText();
@@ -21,7 +25,9 @@ public class DashboardPage extends BasePage {
 		return topicText.getText();
 	}
 
-
+	public String getlinkEmail() {
+		return linkEmail.getText();
+	}
 
 
 }

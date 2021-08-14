@@ -17,12 +17,28 @@ dependencies {
     implementation 'io.github.bonigarcia:webdrivermanager:4.4.3'//web driver автоматически скачивает драйвера
 
 }
-
-test {
+task _chromeTest(type:Test){
+    systemProperty"driver","chrome"
     useTestNG {// pereopredelili tasku
         suites "src\\test\\resources\\myTest.xml"
     }
 }
+task _edgeTest(type:Test){
+    systemProperty"driver","edge"
+    useTestNG {// pereopredelili tasku
+        suites "src\\test\\resources\\myTest.xml"
+    }
+}
+task _ieTest(type:Test){
+    systemProperty"driver","ie"
+    useTestNG {// pereopredelili tasku
+        suites "src\\test\\resources\\myTest.xml"
+    }
+}
+
+
+
+
 allure {//dlyz sozdaniya reportd
     autoconfigure=true
     version='2.13.2'
