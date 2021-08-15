@@ -15,7 +15,7 @@ dependencies {
     implementation 'org.testng:testng:7.4.0'//pishem test тестовый раннинг
     implementation 'org.seleniumhq.selenium:selenium-server:4.0.0-alpha-2'//web driver
     implementation 'io.github.bonigarcia:webdrivermanager:4.4.3'//web driver автоматически скачивает драйвера
-
+    implementation 'log4j:log4j:1.2.17'
 }
 task _chromeTest(type:Test){
     systemProperty"driver","chrome"
